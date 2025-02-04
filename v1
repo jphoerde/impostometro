@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O quanto o governo roubou de você</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 20px;
+    }
+    h1, h2 {
+      margin: 10px 0;
+    }
+    .container {
+      margin-top: 40px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      max-width: 300px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .result {
+      font-size: 48px;
+      margin-top: 40px;
+      color: #0077cc;
+    }
+    .result-text {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>O quanto o governo roubou de você</h1>
+    <h2>O Taxad e o PT pegaram o seu dinheiro, veja quanto o governo pegou do seu dinheiro durante o governo da esquerda do PT.</h2>
+  </header>
+
+  <div class="container">
+    <label for="salario">Coloque seu salário mensal aqui:</label><br>
+    <input type="number" id="salario" placeholder="Exemplo: 3000" required><br><br>
+    <button onclick="calcular()">Ver quanto pegaram do meu trabalho</button>
+  </div>
+
+  <div id="resultado" style="display: none;">
+    <div class="result-text">O governo da esquerda pegou:</div>
+    <div class="result" id="valorCalculado"></div>
+    <div class="result-text">Do seu trabalho</div>
+    <div class="result-text">Esse é a quantia aproximada que você pagou em dinheiro nos 4 anos do governo do PT entre 2023 e 2026.</div>
+  </div>
+
+  <script>
+    function calcular() {
+      var salario = document.getElementById("salario").value;
+
+      if (salario === "" || salario <= 0) {
+        alert("Por favor, insira um valor válido para o salário.");
+        return;
+      }
+
+      var valorCalculado = salario * 12 * 4 * 0.38;
+      document.getElementById("valorCalculado").innerText = "R$ " + valorCalculado.toFixed(2);
+      document.querySelector(".container").style.display = "none";
+      document.getElementById("resultado").style.display = "block";
+    }
+  </script>
+</body>
+</html>
