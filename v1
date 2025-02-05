@@ -64,6 +64,19 @@
     .back-button:hover {
       background-color: #e65c5c;
     }
+    .links {
+      margin-top: 40px;
+      text-align: left;
+      display: inline-block;
+    }
+    .links a {
+      color: #ff6666;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -84,6 +97,13 @@
     <div class="result-text">Do seu trabalho</div>
     <div class="result-text">Esse é a quantia aproximada que você perdeu nos 4 anos do governo do PT entre 2023 e 2026.</div>
     <button class="back-button" onclick="voltar()">Voltar</button>
+
+    <div class="links">
+      <p><a href="https://www.gp1.com.br/brasil/noticia/2025/2/5/gastos-com-viagens-disparam-no-governo-lula-e-atingem-o-maior-valor-em-10-anos-587119.html" target="_blank">1. O Lula gastou R$ 3,6 BILHÕES com viagens</a></p>
+      <p><a href="https://crusoe.com.br/diario/em-4-meses-lula-gastou-r-121-milhoes-no-cartao-corporativo/" target="_blank">2. Nos 4 primeiros meses, o PT gastou R$ 12 milhões no cartão corporativo</a></p>
+      <p><a href="https://veja.abril.com.br/economia/em-meio-a-debate-sobre-gastos-estatais-federais-acumulam-perdas-bilionarias#google_vignette" target="_blank">3. Estatais tem um rombo de R$ 6 bilhões</a></p>
+      <p><a href="https://www.infomoney.com.br/saude/desperdicio-de-vacinas-atinge-r-17-bi-governo-cita-campanhas-de-desinformacao/" target="_blank">4. Governo desperdiça R$ 1,7 bilhões em vacinas</a></p>
+    </div>
   </div>
 
   <script>
@@ -115,4 +135,3 @@
   </script>
 </body>
 </html>
-
