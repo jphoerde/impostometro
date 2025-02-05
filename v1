@@ -13,7 +13,7 @@
       background-color: #f4f4f4;
     }
     header {
-      background-color: #0077cc;
+      background-color: #ff6666;
       color: white;
       padding: 20px;
     }
@@ -45,11 +45,24 @@
     .result {
       font-size: 48px;
       margin-top: 40px;
-      color: #0077cc;
+      color: #ff6666;
     }
     .result-text {
       font-size: 24px;
       margin-top: 10px;
+    }
+    .back-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #ff6666;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .back-button:hover {
+      background-color: #e65c5c;
     }
   </style>
 </head>
@@ -60,7 +73,7 @@
   </header>
 
   <div class="container">
-    <label for="salario">Coloque seu salário mensal aqui:</label><br>
+    <label for="salario">Coloque seu salário/renda mensal aqui:</label><br>
     <input type="number" id="salario" placeholder="Exemplo: 3000" required><br><br>
     <button onclick="calcular()">Ver quanto pegaram do meu trabalho</button>
   </div>
@@ -69,7 +82,8 @@
     <div class="result-text">O governo da esquerda pegou:</div>
     <div class="result" id="valorCalculado"></div>
     <div class="result-text">Do seu trabalho</div>
-    <div class="result-text">Esse é a quantia aproximada que você pagou em dinheiro nos 4 anos do governo do PT entre 2023 e 2026.</div>
+    <div class="result-text">Esse é a quantia aproximada que você perdeu nos 4 anos do governo do PT entre 2023 e 2026.</div>
+    <button class="back-button" onclick="voltar()">Voltar</button>
   </div>
 
   <script>
@@ -82,10 +96,23 @@
       }
 
       var valorCalculado = salario * 12 * 4 * 0.38;
-      document.getElementById("valorCalculado").innerText = "R$ " + valorCalculado.toFixed(2);
+
+      // Formatar o número com separação de milhar e decimal
+      var valorFormatado = valorCalculado.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      document.getElementById("valorCalculado").innerText = "R$ " + valorFormatado;
       document.querySelector(".container").style.display = "none";
       document.getElementById("resultado").style.display = "block";
+    }
+
+    function voltar() {
+      document.getElementById("resultado").style.display = "none";
+      document.querySelector(".container").style.display = "block";
     }
   </script>
 </body>
 </html>
+
